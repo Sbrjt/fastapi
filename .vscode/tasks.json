@@ -1,0 +1,31 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run backend",
+            "type": "shell",
+            "command": "cd backend; pdm run dev",
+            "isBackground": true,
+            "hide": true
+        },
+        {
+            "label": "Run frontend",
+            "type": "shell",
+            "command": "npm run dev --prefix frontend",
+            "isBackground": true,
+            "hide": true
+        },
+        {
+            "label": "Run backend and frontend",
+            "dependsOn": [
+                "Run backend",
+                "Run frontend"
+            ],
+            "dependsOrder": "parallel",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+    ]
+}

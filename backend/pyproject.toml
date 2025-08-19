@@ -1,0 +1,19 @@
+[project]
+name = "backend"
+version = "0.1.0"
+requires-python = ">=3.10,<4.0"
+dependencies = [
+    "fastapi[standard]>=0.116.1",
+    "pydantic>=2.11.7",
+    "PyJWT>=2.10.1",
+    "python-dotenv>=1.1.1",
+    "tinydb>=4.8.2",
+    "bcrypt>=4.3.0",
+]
+
+[tool.pdm.scripts]
+dev = "fastapi dev app/main.py"
+start = "fastapi run app/main.py"
+
+[tool.pdm]
+distribution = false
